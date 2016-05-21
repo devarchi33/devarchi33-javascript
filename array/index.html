@@ -4,14 +4,30 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>egghead javasctipt example by devarchi33</title>
+    <style>
+        .task-list {
+            color: black;
+        }
+
+        .task-list--completed {
+            color: lightgray;
+        }
+    </style>
 </head>
 <body>
-<input type="text" id="input"/>
-<button type="button" id="button">Add</button>
+
+<!-- some() example -->
+<ul class="task-list"></ul>
+
+<!-- push() example -->
+<input type="text" id="input" placeholder="add list"/>
+<button type="button" id="button">Add List</button>
 <ul id="list">
     <!-- Pets-->
 </ul>
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="some.js"></script>
 <script src="push.js"></script>
 </body>
 </html>
