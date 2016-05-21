@@ -36,6 +36,9 @@ var people2 = [
 
 console.log("");
 
+/**
+ * concat 을 수행하면 요소가 합쳐진 새로운 배열을 리턴해 준다.
+ */
 people
     .concat(people2)
     .forEach(function (person) {
