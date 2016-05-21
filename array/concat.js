@@ -44,3 +44,5 @@ people
     .forEach(function (person) {
         console.log(person.name);
     });
+
+// concat() 은 shallow copy 이다. Object 요소에 대해서는 origin 과 copied 모두 주소 값을 참조한다.
