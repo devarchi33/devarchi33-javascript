@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 22..
  */
 
-// Array.prototype.filter(); return Array Object.
+// Array.prototype.filter
+// return : Array , args : callback fnc
 
 var list = [1, 2, 3, 4, 5];
 var newList = list.filter(x => x > 3);

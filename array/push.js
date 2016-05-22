@@ -3,14 +3,16 @@
  */
 
 $(document).ready(function () {
-    //Array.prototype.push
+    // Array.prototype.push
+    // return : Array , args : String ...
+    // Use : push.apply(Array, Array)
 
     const ex_pets = ["Cat", "Dog"];
     const wishlist = ["Hamster", "Horse", "Snake"];
 
     /**
-     * push 는 return 값 으로 newArray 의 length 를 반환하고,
-     * concat 은 return 값 으로 newArray 를 반환한다.
+     * push 는 return 값 으로 newArray 의 length 를 반환하고,  -->  원본 Array 에 추가한 후 Array.length 를 반환
+     * concat 은 return 값 으로 newArray 를 반환한다.  -->  원본 Array 를 copy 한 후, copy 한 Array 에 element 를 추가.
      */
     ex_pets.push.apply(ex_pets, wishlist); // [ 'Cat', 'Dog', 'Hamster', 'Horse', 'Snake' ]
     ex_pets.push("Hamster", "Horse", "Snake"); // [ 'Cat', 'Dog', 'Hamster', 'Horse', 'Snake' ]

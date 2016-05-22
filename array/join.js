@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 21..
  */
 
-//Array.prototype.join();
+// Array.prototype.join
+// return : String, args : String
 
 var name = ["Donghoon", "Jaeyeol", "Sejong"];
 

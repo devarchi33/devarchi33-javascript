@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 22..
  */
 
-// Array.prototype.some(); return boolean.
+// Array.prototype.some
+// return boolean , args : callback fnc
 
 var items = [1, 2, 3, 4, 5];
 var hasThree = items.some(val => (val === 3)); // true

@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 21..
  */
 
-//Array.prototype.indexOf();
+// Array.prototype.indexOf
+// return : Array.index , args : String / (String, start index)
 
 var family = ["Shane", "Sally", "Isaac"];
 var kittieExists = family.indexOf("Kittie") > -1;

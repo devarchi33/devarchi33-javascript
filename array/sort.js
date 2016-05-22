@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 21..
  */
 
-// Array.prototype.sort();
+// Array.prototype.sort
+// return : Array , args : callback fnc
 
 var items = ["shane", "isaac", "sally"];
 var sortedItems = items.sort();

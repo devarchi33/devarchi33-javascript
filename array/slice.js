@@ -2,7 +2,10 @@
  * Created by donghoon on 2016. 5. 21..
  */
 
-//Array.prototype.slice();  slice() is shallow copy.
+// Array.prototype.slice
+// slice() is shallow copy.
+// return : Array , args : start index, end index
+
 var sally = {
     name: "sally"
 };

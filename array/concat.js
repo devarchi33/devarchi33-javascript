@@ -2,7 +2,8 @@
  * Created by donghoon on 2016. 5. 21..
  */
 
-//Array.prototype.concat();
+// Array.prototype.concat
+// return : Array , args : Array
 
 var items = [1];
 
