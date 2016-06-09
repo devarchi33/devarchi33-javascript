@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="MainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Fundamental</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/admin-lte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../node_modules/admin-lte/dist/css/skins/skin-black-light.min.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/nomalize.css">
+</head>
+<body ng-controller="MainCntrl" class="skin-black-light sidebar-mini">
+
+<header class="main-header" w3-include-html="./fragments/commons/header.html"></header>
+<aside class="main-sidebar" w3-include-html="./fragments/commons/left_sidebar.html"></aside>
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="content">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Angular-Fundamental</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <input type="text" ng-model="hello"/>
+                    <p>{{hello}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer" w3-include-html="./fragments/commons/footer.html"></footer>
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/admin-lte/dist/js/app.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    w3IncludeHTML();
+</script>
+
+</body>
+</html>

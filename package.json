@@ -9,6 +9,10 @@
   "author": "Donghoon Lee",
   "license": "ISC",
   "dependencies": {
+    "admin-lte": "^2.3.3",
+    "angular": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
     "jquery": "^2.2.4"
   }
 }
