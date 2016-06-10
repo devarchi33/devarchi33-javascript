@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" ng-app="MainApp">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
@@ -11,9 +11,29 @@
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./css/animations.css">
 </head>
-<body>
+<body ng-controller="MainCntrl">
 
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <a href="#"><img src="./img/logo.png" alt="로고" class="logo"></a>
+            <ul class="nav nav-bar">
+                <li ng-repeat="category in categories">
+                    <a href="">{{category.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div ng-repeat="bookmark in bookmarks">
+                <button class="close">&times;</button>
+                <button class="btn btn-link">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../node_modules/lodash/lodash.min.js"></script>
