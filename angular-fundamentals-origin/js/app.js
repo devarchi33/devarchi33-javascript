@@ -88,6 +88,7 @@ angular.module("MainApp", [])
          * CRUD
          */
 
+        //create
         function resetCreateForm() {
             $scope.newBookmark = {
                 title: "",
@@ -103,5 +104,32 @@ angular.module("MainApp", [])
         }
 
         $scope.createBookmark = createBookmark;
+
+        //update
+
+        $scope.editedBookmark = null;
+
+        function setEditBookmark(bookmark) {
+            $scope.editedBookmark = angular.copy(bookmark);
+        }
+
+        function updateBookmark(bookmark) {
+            var index = _.findIndex($scope.bookmarks, function (b) {
+                return b.id == bookmark.id;
+            });
+
+            $scope.bookmarks[index] = bookmark;
+
+            $scope.editedBookmark = null;
+            $scope.isEditing = false;
+        }
+
+        function isSelectedBookmark(bookmarkId) {
+            return $scope.editedBookmark !== null && $scope.editedBookmark.id === bookmarkId;
+        }
+
+        $scope.setEditBookmark = setEditBookmark;
+        $scope.updateBookmark = updateBookmark;
+        $scope.isSelectedBookmark = isSelectedBookmark;
 
     });
