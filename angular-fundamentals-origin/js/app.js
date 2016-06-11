@@ -132,4 +132,14 @@ angular.module("MainApp", [])
         $scope.updateBookmark = updateBookmark;
         $scope.isSelectedBookmark = isSelectedBookmark;
 
+        //delete
+
+        function removeBookmark(bookmark) {
+            _.remove($scope.bookmarks, function (b) {
+                return b.id == bookmark.id;
+            });
+        }
+
+        $scope.removeBookmark = removeBookmark;
+
     });
