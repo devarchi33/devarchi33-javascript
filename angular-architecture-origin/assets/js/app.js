@@ -1,7 +1,10 @@
 /**
  * Created by donghoon on 2016. 6. 10..
  */
-angular.module("MainApp", [])
+angular.module("Devarchi33App", [
+    'categories',
+    'categories.bookmarks'
+])
     .run(function () {
         console.log("My app is ready!");
     })
