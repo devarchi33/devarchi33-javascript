@@ -10,13 +10,14 @@ angular.module("App", [
         console.log("My app is ready!");
     })
 
-    .config(function ($stateProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider.state('app', {
-            url: '/',
-            templateUrl: 'app/categories/categories.tmpl.html',
-            controller: 'MainCtrl'
-        })
+            url: '',
+            abstract: true
+        });
+
+        $urlRouterProvider.otherwise("/");
     })
 
     .controller("MainCtrl", function ($scope) {
