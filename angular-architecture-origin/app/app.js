@@ -1,14 +1,25 @@
 /**
  * Created by donghoon on 2016. 6. 10..
  */
-angular.module("Devarchi33App", [
+angular.module("App", [
+    'ui.router',
     'categories',
     'categories.bookmarks'
 ])
     .run(function () {
         console.log("My app is ready!");
     })
-    .controller("MainCntrl", function ($scope) {
+
+    .config(function ($stateProvider) {
+
+        $stateProvider.state('app', {
+            url: '/',
+            templateUrl: 'app/categories/categories.tmpl.html',
+            controller: 'MainCtrl'
+        })
+    })
+
+    .controller("MainCtrl", function ($scope) {
         $scope.greeting = "Hello My App!";
 
         $scope.categories = [
