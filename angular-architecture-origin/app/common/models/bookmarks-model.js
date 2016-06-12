@@ -22,6 +22,11 @@ angular.module('devarchi33.models.bookmarks', [])
 
         model.getBookmarkList = function () {
             return $http.get(URLS.FETCH).then(cacheBookmark);
-        }
+        };
+
+        model.createBookmark = function (bookmark) {
+            bookmark.id = bookmarks.length;
+            bookmarks.push(bookmark);
+        };
     });
 
