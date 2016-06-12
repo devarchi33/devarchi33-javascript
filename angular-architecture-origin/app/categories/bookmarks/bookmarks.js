@@ -27,5 +27,8 @@ angular.module('categories.bookmarks', [
          * ex) http://localhost:63343/devarchi33-javascript/angular-architecture-origin/index.html#/categories/Wow
          */
         bookmarksListCtrl.currentParam = $stateParams.category;
-        bookmarksListCtrl.bookmarks = BookmarksModel.getBookmarkList();
+        BookmarksModel.getBookmarkList()
+            .then(function (result) {
+                bookmarksListCtrl.bookmarks = result;
+            });
     });

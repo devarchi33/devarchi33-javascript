@@ -23,6 +23,9 @@ angular.module('categories', [
     .controller("CategoriesListCtrl", function CategoriesCtrl($scope, CategoriesListModel) {
         var categoriesListCtrl = this;
 
-        categoriesListCtrl.categories = CategoriesListModel.getCategoryList();
+        CategoriesListModel.getCategoryList()
+            .then(function (result) {
+                categoriesListCtrl.categories = result;
+            });
     });
 
