@@ -14,15 +14,18 @@ angular.module('categories.bookmarks', [
                 views: {
                     'bookmarksTmpl@': {
                         templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html',
-                        controller: 'BookmarksCtrl'
+                        controller: 'BookmarksListCtrl as bookmarksListCtrl'
                     }
                 }
             })
     })
 
-    .controller('BookmarksCtrl', function ($scope, $stateParams) {
+    .controller('BookmarksListCtrl', function ($scope, $stateParams, BookmarksModel) {
+        var bookmarksListCtrl = this;
+
         /**
          * ex) http://localhost:63343/devarchi33-javascript/angular-architecture-origin/index.html#/categories/Wow
          */
-        $scope.currentParam = $stateParams.category;
+        bookmarksListCtrl.currentParam = $stateParams.category;
+        bookmarksListCtrl.bookmarks = BookmarksModel.getBookmarkList();
     });
