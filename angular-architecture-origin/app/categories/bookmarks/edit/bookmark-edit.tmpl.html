@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Title</title>
-</head>
-<body>
+<form class="edit-form" role="form" ng-submit="updateBookmark(editedBookmark)">
+    <div class="form-group">
+        <label for="editedBookmarkTitle">Edit Bookmark Title</label>
+        <input ng-model="editedBookmark.title" type="text" class="form-control" id="editedBookmarkTitle"
+               placeholder="Edit Title">
+    </div>
+    <div class="form-group">
+        <label for="editedBookmarkUrl">Edit Bookmark Url</label>
+        <input ng-model="editedBookmark.url" type="text" class="form-control" id="editedBookmarkUrl"
+               placeholder="Edit Url">
+    </div>
 
-</body>
-</html>
+    <button class="btn btn-info btn-lg">Save</button>
+    <button class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
+</form>

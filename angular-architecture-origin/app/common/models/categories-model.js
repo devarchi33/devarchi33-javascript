@@ -8,7 +8,8 @@ angular.module('devarchi33.models.categories', [])
             URLS = {
                 FETCH: 'data/categories.json'
             },
-            categories;
+            categories,
+            currentCategory;
 
         function extract(result) {
             return result.data;
@@ -18,6 +19,21 @@ angular.module('devarchi33.models.categories', [])
             categories = extract(result);
             return categories;
         }
+
+        model.setCurrentCategory = function (categoryName) {
+            model.getCategoryByName(categoryName)
+                .then(function (category) {
+                    currentCategory = category;
+                })
+        };
+
+        model.getCurrentCategory = function () {
+            return currentCategory;
+        };
+
+        model.getCurrentCategoryName = function () {
+            return currentCategory ? currentCategory.name : "";
+        };
 
         model.getCategoryList = function () {
             return (categories) ? $q.when(categories) : $http.get(URLS.FETCH).then(cacheCategories);
@@ -37,8 +53,8 @@ angular.module('devarchi33.models.categories', [])
                 deffered.resolve(findCategory());
             } else {
                 model.getCategoryList()
-                    .then(function (result) {
-                        deffered.resolve(findCategory);
+                    .then(function () {
+                        deffered.resolve(findCategory());
                     })
             }
 

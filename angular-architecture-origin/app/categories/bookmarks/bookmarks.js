@@ -20,15 +20,20 @@ angular.module('categories.bookmarks', [
             })
     })
 
-    .controller('BookmarksListCtrl', function ($scope, $stateParams, BookmarksModel) {
+    .controller('BookmarksListCtrl', function ($scope, $stateParams, BookmarksModel, CategoriesListModel) {
         var bookmarksListCtrl = this;
 
         /**
          * ex) http://localhost:63343/devarchi33-javascript/angular-architecture-origin/index.html#/categories/Wow
          */
-        bookmarksListCtrl.currentParam = $stateParams.category;
+        // bookmarksListCtrl.currentParam = $stateParams.category;
+        CategoriesListModel.setCurrentCategory($stateParams.category);
+
         BookmarksModel.getBookmarkList()
             .then(function (result) {
                 bookmarksListCtrl.bookmarks = result;
             });
+
+        bookmarksListCtrl.getCurrentCategory = CategoriesListModel.getCurrentCategory;
+        bookmarksListCtrl.getCurrentCategoryName = CategoriesListModel.getCurrentCategoryName;
     });
