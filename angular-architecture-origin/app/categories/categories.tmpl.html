@@ -1,7 +1,7 @@
 <a ng-click="setCurrentCategory(null)"><img src="assets/img/logo.png" alt="site-logo" class="logo"></a>
 <ul class="nav nav-bar">
     <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}">
-        <a ng-click="setCurrentCategory(category)">
+        <a ui-sref="app.categories.bookmarks({category: category.name})" ng-click="setCurrentCategory(category)">
             {{category.name}}
         </a>
     </li>

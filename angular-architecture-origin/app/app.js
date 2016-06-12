@@ -20,7 +20,7 @@ angular.module("App", [
         $urlRouterProvider.otherwise("/");
     })
 
-    .controller("MainCtrl", function ($scope) {
+    .controller("MainCtrl", function ($scope, $state) {
         $scope.greeting = "Hello My App!";
 
         $scope.categories = [
@@ -46,6 +46,11 @@ angular.module("App", [
 
         function setCurrentCategory(category) {
             $scope.currentCategory = category;
+
+            /**
+             * ui-sref 와 같은 기능을 함.
+             */
+            // $state.go('app.categories.bookmarks', {category: category.name});
 
             cancelCreating();
             cancelEditing();
