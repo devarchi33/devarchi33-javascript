@@ -2,6 +2,7 @@
  * Created by donghoon on 2016. 6. 10..
  */
 angular.module("App", [
+    'ngAnimate',
     'ui.router',
     'categories',
     'categories.bookmarks'
