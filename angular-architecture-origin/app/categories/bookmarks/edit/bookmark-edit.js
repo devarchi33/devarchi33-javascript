@@ -27,17 +27,14 @@ angular.module('categories.bookmarks.edit', [])
         }
 
         function updateBookmark() {
-            editBookmarkCtrl.bookmark = angular.copy(editBookmarkCtrl.editedBookmark);
-
-            BookmarksModel.updateBookmark(editBookmarkCtrl.bookmark);
+            BookmarksModel.updateBookmark(editBookmarkCtrl.editedBookmark);
             returnToBookmarks();
         }
 
         BookmarksModel.getBookmarkById($stateParams.bookmarkId)
             .then(function (bookmark) {
                 if (bookmark) {
-                    editBookmarkCtrl.bookmark = bookmark;
-                    editBookmarkCtrl.editedBookmark = angular.copy(editBookmarkCtrl.bookmark);
+                    editBookmarkCtrl.editedBookmark = angular.copy(bookmark);
                 } else {
                     returnToBookmarks();
                 }

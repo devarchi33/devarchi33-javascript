@@ -20,7 +20,7 @@ angular.module('devarchi33.models.bookmarks', [])
             return bookmarks;
         }
 
-        function findBookmark(bookmarkId) {
+        function findBookmarkById(bookmarkId) {
             return _.find(bookmarks, function (bookmark) {
                 return bookmark.id === parseInt(bookmarkId, 10);
             })
@@ -31,10 +31,10 @@ angular.module('devarchi33.models.bookmarks', [])
             var deffered = $q.defer();
 
             if (bookmarks) {
-                deffered.resolve(findBookmark(bookmarkId));
+                deffered.resolve(findBookmarkById(bookmarkId));
             } else {
                 model.getBookmarkList().then(function () {
-                    deffered.resolve(findBookmark(bookmarkId));
+                    deffered.resolve(findBookmarkById(bookmarkId));
                 })
             }
 
