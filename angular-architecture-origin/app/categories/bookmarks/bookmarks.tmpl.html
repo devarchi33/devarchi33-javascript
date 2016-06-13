@@ -1,7 +1,7 @@
 <h1>{{bookmarksListCtrl.currentParam}}</h1>
 <div ng-class="{'active':isSelectedBookmark(bookmark.id)}"
      ng-repeat="bookmark in bookmarksListCtrl.bookmarks | filter : {category:bookmarksListCtrl.getCurrentCategoryName()}">
-    <button ng-click="removeBookmark(bookmark)" class="close">&times;</button>
+    <button ng-click="bookmarksListCtrl.deleteBookmark(bookmark)" class="close">&times;</button>
     <button class="btn btn-link"
             ui-sref="app.categories.bookmarks.edit({bookmarkId:bookmark.id})">
         <span class="glyphicon glyphicon-pencil"></span>

@@ -46,8 +46,12 @@ angular.module('devarchi33.models.bookmarks', [])
         };
 
         model.createBookmark = function (bookmark) {
-            bookmark.id = bookmarks.length;
-            bookmarks.push(bookmark);
+            if (bookmark.title !== "" && bookmark.url !== "") {
+                bookmark.id = bookmarks.length;
+                bookmarks.push(bookmark);
+            } else {
+                alert("please input field...");
+            }
         };
 
         model.updateBookmark = function (bookmark) {
@@ -56,6 +60,16 @@ angular.module('devarchi33.models.bookmarks', [])
             })
 
             bookmarks[index] = bookmark;
+        }
+
+        model.deleteBookmark = function (bookmark) {
+            var checkDelete = confirm("Really Delete?");
+
+            if (checkDelete) {
+                _.remove(bookmarks, function (b) {
+                    return b.id === bookmark.id;
+                })
+            }
         }
     });
 
